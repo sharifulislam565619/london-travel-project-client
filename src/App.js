@@ -2,6 +2,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Booking from './components/Pages/Booking/Booking';
 import Home from './components/Pages/Home/Home';
 import Hotels from './components/Pages/Hotels/Hotels';
 import NotFound from './components/Pages/NotFound/NotFound';
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/hotels">
             <Hotels></Hotels>
+          </Route>
+          <Route path="/booking/:id">
+            <Booking></Booking>
           </Route>
           <Route exact path="*">
             <NotFound></NotFound>
