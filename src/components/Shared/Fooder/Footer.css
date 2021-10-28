@@ -1,0 +1,24 @@
+.footer {
+  background-color: rgb(50 50 50);
+  color: rgb(219, 219, 219);
+}
+.social_icon i {
+  font-size: 18px;
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: black;
+  padding: 8px;
+  border-radius: 50px;
+}
+.social_icon i:hover {
+  background-color: rgb(1, 1, 206);
+  color: white;
+}
+.footer a {
+  text-decoration: none;
+  margin-right: 18px;
+  color: rgb(184, 184, 184);
+}
+.footer a:hover {
+  color: blue;
+}
