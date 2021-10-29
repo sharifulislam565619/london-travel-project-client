@@ -10,6 +10,7 @@ const useFirebase = () => {
     const [user, setUser] = useState([]);
     const [error, setError] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
+    console.log(user)
 
 
 
@@ -25,11 +26,12 @@ const useFirebase = () => {
             if (user) {
 
                 setUser(user)
-                setIsLoading(false)
+
 
             } else {
                 setUser({})
             }
+            setIsLoading(false)
         });
 
     }, [])
@@ -39,7 +41,10 @@ const useFirebase = () => {
             setUser({})
         }).catch((error) => {
             setError(error.message)
-        });
+        })
+            .finally(() => {
+                setIsLoading(false)
+            })
     }
 
     return {

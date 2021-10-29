@@ -1,0 +1,11 @@
+.place-order-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.place-order-form input {
+  margin: 10px 0;
+}

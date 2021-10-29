@@ -7,6 +7,7 @@ import Booking from './components/Pages/Booking/Booking';
 import Home from './components/Pages/Home/Home';
 import Hotels from './components/Pages/Hotels/Hotels';
 import Login from './components/Pages/Login/Login';
+import ManageOrders from './components/Pages/ManageOrders/ManageOrders';
 import NotFound from './components/Pages/NotFound/NotFound';
 import PrivateRoute from './components/Private/PrivateRoute';
 import Footer from './components/Shared/Fooder/Footer';
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <PrivateRoute path="/booking/:id">
               <Booking></Booking>
+            </PrivateRoute>
+            <PrivateRoute path="/manageOrders">
+              <ManageOrders></ManageOrders>
             </PrivateRoute>
             <Route exact path="*">
               <NotFound></NotFound>

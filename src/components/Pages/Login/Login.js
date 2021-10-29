@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
-    const { googleSignIn, setUser, setError, setIsLoading } = useAuth()
+    const { googleSignIn, setUser, setError } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
@@ -17,7 +17,7 @@ const Login = () => {
                 const user = result.user;
                 setUser(user)
                 history.push(url)
-                setIsLoading(false)
+
 
             }).catch((error) => {
                 const errorMessage = error.message;
