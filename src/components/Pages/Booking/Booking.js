@@ -9,7 +9,7 @@ const Booking = () => {
     const { id } = useParams()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/hotels/${id}`)
+        fetch(`https://polar-crag-36295.herokuapp.com/hotels/${id}`)
             .then(res => res.json())
             .then(data => setHotel(data))
             .catch((error) => {

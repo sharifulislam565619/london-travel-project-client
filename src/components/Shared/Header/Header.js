@@ -1,11 +1,16 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import useFirebase from '../../../hooks/useFirebase';
 import logo from '../../../images/logo.PNG';
+import userUrl from '../../../images/userPhoto.png';
 import './Header.css';
 
 const Header = () => {
     // const { user, logOut } = useAuth()
+    const { user, logOut } = useFirebase()
+
     return (
 
         <>
@@ -22,9 +27,9 @@ const Header = () => {
                         <Nav.Link as={HashLink} to="/home#about">About us</Nav.Link>
                         <Nav.Link as={HashLink} to="/contact">Contact us</Nav.Link>
 
-                        { /*   {
+                        {
                             user?.displayName || user?.email ?
-                                <div>  <small className="text-white"> Signed in as: <i className="text-primary">{user?.displayName}</i></small>
+                                <div>  <small className="text-white"><i className="text-primary">{user?.displayName}</i></small>
                                     <img className="userPhoto" src={user.photoURL || userUrl} alt='' />
                                     <button className="btn btn-danger" onClick={logOut}>
                                         <i className="fas fa-sign-out-alt text-info me-1"></i>Logout</button></div>
@@ -34,7 +39,7 @@ const Header = () => {
                                     <button className="btn btn-primary"><i className="fas fa-sign-in-alt text-info me-1"></i>Login</button>
                                 </Nav.Link>
                         }
-                    */}
+
 
 
 

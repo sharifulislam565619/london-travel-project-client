@@ -8,7 +8,7 @@ const Hotels = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/hotels')
+        fetch('https://polar-crag-36295.herokuapp.com/hotels')
             .then(res => res.json())
             .then(data => setHotels(data))
     }, [])
