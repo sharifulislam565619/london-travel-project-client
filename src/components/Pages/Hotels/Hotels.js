@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Hotel from '../Hotel/Hotel';
 import './Hotels.css';
 
@@ -29,7 +30,7 @@ const Hotels = () => {
                 isLoading && <Spinner className="fs-3" animation="border" variant="black" />
             }
 
-            <div className="container">
+            <div className="container pb-3">
                 <Row className="g-4">
                     {
                         hotels.map(hotel => <Hotel
@@ -38,7 +39,10 @@ const Hotels = () => {
                         ></Hotel>)
                     }
                 </Row>
+
+
             </div>
+            <Link to="/home" className="btn btn-dark">Back to home page</Link>
         </div>
     );
 };

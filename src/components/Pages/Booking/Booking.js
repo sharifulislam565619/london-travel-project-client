@@ -2,6 +2,7 @@ import { React, useEffect, useState } from 'react';
 import { Card, Col, Row, Spinner } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import './Booking.css';
 
@@ -16,10 +17,10 @@ const Booking = () => {
 	const onSubmit = data => {
 		const newData = data;
 		newData.email = user?.email;
-		newData.status = "pending"
-		newData.Id = id;
+		newData.status = "pending..."
+		newData.Order_Id = id;
 
-		fetch("http://localhost:5000/booking", {
+		fetch("https://polar-crag-36295.herokuapp.com/booking", {
 			method: "POST",
 			headers: { "content-type": "application/json" },
 			body: JSON.stringify(newData),
@@ -71,7 +72,7 @@ const Booking = () => {
 				<form className="mt-5 place-order-form" onSubmit={handleSubmit(onSubmit)}>
 
 					<input required placeholder="Your name" {...register("name")} />
-					<input required type="email" placeholder="Your email" {...register("emailAddress")} />
+					<input required type="text" placeholder="Your address" {...register("address")} />
 					<input required placeholder="Your phone" type="number" {...register("phone",)} />
 					<input
 						{...register("date", { required: true })} type="date" />
@@ -80,6 +81,7 @@ const Booking = () => {
 						placeholder="Description" />
 					<input type="submit" className="btn btn-primary" value="Order Place" />
 
+					<Link to="/home">	<button className="btn btn-outline-dark">back to home page</button></Link>
 				</form>
 
 			</Row>

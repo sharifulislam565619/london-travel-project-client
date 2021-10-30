@@ -15,12 +15,13 @@ const Service = (props) => {
 
                     <Card.Body>
                         <Card.Title><h6><strong>{name}</strong></h6></Card.Title>
-                        <Card.Title><h6>{charge}</h6></Card.Title>
+                        <Card.Title><h6>$ {charge} per/day</h6></Card.Title>
                         <Card.Text>
                             <small> {description.slice(0, 55)}...</small>
                         </Card.Text>
                     </Card.Body>
-                    <Link to={`/booking/${_id}`}><button className="btn btn-primary">Book now</button></Link>
+                    <Link to={`/booking/${_id}`}><button className="btn btn-primary">Booking now</button></Link>
+
 
                 </Card>
             </CardGroup>
