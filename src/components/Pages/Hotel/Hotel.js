@@ -11,7 +11,7 @@ const Service = (props) => {
             <CardGroup>
                 <Card className="py-3 data-cart">
 
-                    <Card.Img variant="top" className="w-75 mx-auto" src={img} />
+                    <Card.Img variant="top" className="mx-auto hotel-img" src={img} />
 
                     <Card.Body>
                         <Card.Title><h6><strong>{name}</strong></h6></Card.Title>

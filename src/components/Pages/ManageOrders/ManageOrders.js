@@ -93,7 +93,7 @@ const ManageOrders = () => {
                      <td>{order.email}</td>
                      <td>{order.phone}</td>
                      <td className={order.status === "approved" ? "text-primary" : "text-dark"}>{order.status}</td>
-                     <td><button onClick={() => handleOrders(order._id)} className="btn btn-primary">Accept</button></td>
+                     <td><button onClick={() => handleOrders(order._id)} className="btn btn-outline-dark">Accept</button></td>
                      <td><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete</button></td>
                   </tr>
 

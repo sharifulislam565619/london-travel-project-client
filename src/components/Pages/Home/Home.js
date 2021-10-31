@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardGroup, Col, Row, Spinner } from 'react-bootstrap';
+import { Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import About from '../About/About';
 import Banner from '../Banner/Banner';
+import Contact from '../Contact/Contact';
+import Hotel from '../Hotel/Hotel';
 import './Home.css';
 
 const Home = () => {
@@ -26,13 +29,11 @@ const Home = () => {
     }, [])
 
     return (
-        <div id="home" className="mb-3">
+        <div id="home" className="home">
 
             <Banner></Banner>
-
-
-            <div id="hotels" className="mb-3">
-                <h2 className="mt-3">Our hotels</h2>
+            <div id="hotels" className="pb-3">
+                <h2 className="mt-3 text-primary">Our Hotels</h2>
                 <hr />
                 {
                     isLoading && <Spinner className="fs-3" animation="border" variant="black" />
@@ -41,32 +42,19 @@ const Home = () => {
                 <div className="container pb-3">
                     <Row className="g-4">
                         {
-                            newHotels.map(hotel => <Col xl={4} lg={4} md={6} sm={12}>
-                                <CardGroup>
-                                    <Card className="py-3 data-cart">
-
-                                        <Card.Img variant="top" className="w-75 mx-auto" src={hotel.img} />
-
-                                        <Card.Body>
-                                            <Card.Title><h6><strong>{hotel.name}</strong></h6></Card.Title>
-                                            <Card.Title><h6>$ {hotel.charge} per/day</h6></Card.Title>
-                                            <Card.Text>
-                                                <small> {hotel.description.slice(0, 55)}...</small>
-                                            </Card.Text>
-                                        </Card.Body>
-                                        <Link to={`/booking/${hotel._id}`}><button className="btn btn-primary">Booking now</button></Link>
-
-
-                                    </Card>
-                                </CardGroup>
-                            </Col>)
+                            newHotels.map(hotel => <Hotel
+                                key={hotel._id}
+                                hotel={hotel}
+                            ></Hotel>)
                         }
                     </Row>
 
 
                 </div>
             </div>
-            <Link to="/hotels">See in the more hotels</Link>
+            <Link to="/hotels">See in the more hotels ►►</Link>
+            <About />
+            <Contact />
 
 
         </div>

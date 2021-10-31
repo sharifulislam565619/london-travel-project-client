@@ -24,10 +24,10 @@ const Hotels = () => {
     }, [])
     return (
         <div id="hotels" className="mb-5">
-            <h2 className="mt-3">Our hotels</h2>
-            <hr />
+            <h2 className="mt-3 text-primary">All Of Our Hotels</h2>
+            <hr className="w-25" />
             {
-                isLoading && <Spinner className="fs-3" animation="border" variant="black" />
+                isLoading && <Spinner className="fs-3 my-5" animation="border" variant="black" />
             }
 
             <div className="container pb-3">
