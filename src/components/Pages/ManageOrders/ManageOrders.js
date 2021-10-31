@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
+import './ManageOrders.css';
+
 
 const ManageOrders = () => {
    const [orders, setOrders] = useState([])
@@ -64,20 +66,20 @@ const ManageOrders = () => {
 
 
    return (
-      <div>
-         <h2 className="mt-3 text-success">Manage All Orders</h2>
+      <div className="my-table">
+         <h2 className="mt-3 text-success ">Manage All Orders</h2>
          <hr className="w-25" />
          {
             isLoading && <Spinner className="fs-3" animation="border" variant="black" />
          }
 
-         <Table striped bordered hover>
+         <Table responsive="sm md">
             <thead>
                <tr>
-                  <th>#</th>
+                  <th className="table-head">#</th>
                   <th>Name</th>
-                  <th>Email Address</th>
-                  <th>Phone</th>
+                  <th className="table-head">Email Address</th>
+                  <th className="table-head">Phone</th>
                   <th>Status</th>
                   <th>Approval</th>
                   <th>Delete</th>
@@ -88,10 +90,10 @@ const ManageOrders = () => {
                   key={order._id}
                >
                   <tr>
-                     <td>{index + 1}</td>
+                     <td className="table-body">{index + 1}</td>
                      <td>{order.name}</td>
-                     <td>{order.email}</td>
-                     <td>{order.phone}</td>
+                     <td className="table-body">{order.email}</td>
+                     <td className="table-body">{order.phone}</td>
                      <td className={order.status === "approved" ? "text-primary" : "text-dark"}>{order.status}</td>
                      <td><button onClick={() => handleOrders(order._id)} className="btn btn-outline-dark">Accept</button></td>
                      <td><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete</button></td>

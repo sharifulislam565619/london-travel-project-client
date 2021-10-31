@@ -9,7 +9,7 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth()
 
     if (isLoading) {
-        return <Spinner animation="grow" variant="danger" />
+        return <Spinner animation="grow" className="mx-auto" variant="danger" />
     }
 
     return (

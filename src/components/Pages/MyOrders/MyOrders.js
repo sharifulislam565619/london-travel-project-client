@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Spinner, Table } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 
+
 const MyOrders = () => {
    const { user } = useAuth()
    const [orders, setOrders] = useState([])
@@ -55,7 +56,10 @@ const MyOrders = () => {
             isLoading && <Spinner className="fs-3" animation="border" variant="black" />
          }
 
-         <Table striped bordered hover>
+
+
+
+         <Table responsive="md sm">
             <thead>
                <tr>
                   <th>#</th>

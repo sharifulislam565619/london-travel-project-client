@@ -4,12 +4,12 @@ import './About.css';
 
 const About = () => {
    return (
-      <div className="pb-3 mt-3 about">
+      <div className="pb-3 mt-3 about" id="about">
          <h2 className="pt-4 text-primary">About us</h2>
          <hr />
          <div className="row">
             <div className="col-md-5">
-               <img src={img} alt="" />
+               <img className="img-fluid" src={img} alt="" />
             </div>
             <div className="col-md-7">
                <p className="text-start p-3">

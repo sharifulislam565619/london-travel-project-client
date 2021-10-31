@@ -9,3 +9,9 @@
 .place-order-form input {
   margin: 10px 0;
 }
+
+@media only screen and (max-width: 668px) {
+  .place-order-form {
+    width: 90%;
+  }
+}

@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 import login_img from '../../../images/login_img.jpg';
 
 const Login = () => {
-    const { googleSignIn, setUser, setError } = useAuth()
+    const { googleSignIn, setUser } = useAuth()
 
     const history = useHistory()
     const location = useLocation()
@@ -21,7 +21,7 @@ const Login = () => {
 
             }).catch((error) => {
                 const errorMessage = error.message;
-                setError(errorMessage)
+                console.log(errorMessage)
 
             });
     }

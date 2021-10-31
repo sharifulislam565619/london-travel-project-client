@@ -33,3 +33,14 @@
   background-color: #555;
   color: white;
 }
+
+.banner span {
+  font-size: 55px;
+  color: rgb(28, 243, 0);
+  font-weight: bolder;
+}
+.banner p {
+  font-style: italic;
+  color: rgb(50, 255, 43);
+  font-weight: bolder;
+}
