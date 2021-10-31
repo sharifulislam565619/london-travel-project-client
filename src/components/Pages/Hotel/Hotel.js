@@ -20,7 +20,7 @@ const Service = (props) => {
                             <small> {description.slice(0, 55)}...</small>
                         </Card.Text>
                     </Card.Body>
-                    <Link to={`/booking/${_id}`}><button className="btn btn-primary">Booking now</button></Link>
+                    <Link to={`/booking/${_id}`}><button className="btn btn-primary">Book now</button></Link>
 
 
                 </Card>

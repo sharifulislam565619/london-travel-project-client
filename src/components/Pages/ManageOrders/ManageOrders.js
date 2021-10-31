@@ -8,6 +8,7 @@ const ManageOrders = () => {
    const [isLoading, setIsLoading] = useState(true)
    const [approved, setApproved] = useState(true)
 
+   // console.log(orders)
 
    useEffect(() => {
       fetch("https://polar-crag-36295.herokuapp.com/manageOrders")
@@ -80,8 +81,8 @@ const ManageOrders = () => {
                   <th>Name</th>
                   <th className="table-head">Email Address</th>
                   <th className="table-head">Phone</th>
+                  <th>Order id</th>
                   <th>Status</th>
-                  <th>Approval</th>
                   <th>Delete</th>
                </tr>
             </thead>
@@ -92,10 +93,11 @@ const ManageOrders = () => {
                   <tr>
                      <td className="table-body">{index + 1}</td>
                      <td>{order.name}</td>
-                     <td className="table-body">{order.email}</td>
+                     <td className="table-body">{order.emailAddress}</td>
                      <td className="table-body">{order.phone}</td>
-                     <td className={order.status === "approved" ? "text-primary" : "text-dark"}>{order.status}</td>
-                     <td><button onClick={() => handleOrders(order._id)} className="btn btn-outline-dark">Accept</button></td>
+                     <td className="table-body">{order.order_id}</td>
+
+                     <td><button onClick={() => handleOrders(order._id)} className={order.status === "approved" ? "btn btn-outline-dark text-primary" : "btn btn-outline-dark"}>{order.status}</button></td>
                      <td><button onClick={() => handleDelete(order._id)} className="btn btn-danger">Delete</button></td>
                   </tr>
 

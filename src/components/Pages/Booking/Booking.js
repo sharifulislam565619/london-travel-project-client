@@ -8,6 +8,7 @@ import './Booking.css';
 
 const Booking = () => {
 	const { id } = useParams()
+
 	const [hotel, setHotel] = useState({})
 	const [isLoading, setIsLoading] = useState(true)
 	const { user } = useAuth()
@@ -18,7 +19,7 @@ const Booking = () => {
 		const newData = data;
 		newData.email = user?.email;
 		newData.status = "pending..."
-		newData.Order_Id = id;
+		newData.order_id = id;
 
 		fetch("https://polar-crag-36295.herokuapp.com/booking", {
 			method: "POST",
@@ -71,15 +72,15 @@ const Booking = () => {
 
 				<form className="mt-5 place-order-form" onSubmit={handleSubmit(onSubmit)}>
 
-					<input required placeholder="Your name" {...register("name")} />
-					<input required type="text" placeholder="Your address" {...register("address")} />
+					<input required placeholder="Your name" defaultValue={user?.displayName} {...register("name")} />
+					<input required type="text" placeholder="Your email" defaultValue={user?.email} {...register("emailAddress")} />
 					<input required placeholder="Your phone" type="number" {...register("phone",)} />
 					<input
 						{...register("date", { required: true })} type="date" />
 					<textarea
 						{...register("description", { required: true })}
 						placeholder="Description" />
-					<input type="submit" className="btn btn-primary" value="Order Place" />
+					<input type="submit" className="btn btn-primary" value="Order Submit" />
 
 					<Link to="/home">	<button className="btn btn-outline-dark">back to home page</button></Link>
 				</form>

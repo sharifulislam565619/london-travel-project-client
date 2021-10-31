@@ -77,7 +77,7 @@ const MyOrders = () => {
                   <tr>
                      <td>{index + 1}</td>
                      <td>{order.name}</td>
-                     <td>{order.email}</td>
+                     <td>{order.emailAddress}</td>
                      <td>{order.phone}</td>
                      <td className={order.status === "approved" ? "text-primary" : "text-dark"}>{order.status}</td>
 
